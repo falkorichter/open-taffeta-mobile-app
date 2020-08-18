@@ -24,7 +24,7 @@ class BuzzerApiManager {
     final BaseOptions options = BaseOptions(
       baseUrl: baseUrl,
       connectTimeout: connectTimeoutSecond * 1000,
-      contentType: ContentType.json,
+      contentType: ContentType.json.mimeType,
       responseType: ResponseType.json,
     );
 
@@ -61,8 +61,7 @@ class BuzzerApiManager {
         password: password,
       );
 
-      final Response<Map<String, dynamic>> response =
-          await _dio.post(_pathLogin, data: jsonEncode(request));
+      final Response<Map<String, dynamic>> response = await _dio.post(_pathLogin, data: jsonEncode(request));
 
       return AuthResponseModel.fromJson(response.data);
     } on DioError catch (e) {
@@ -81,8 +80,7 @@ class BuzzerApiManager {
         password: password,
       );
 
-      final Response<Map<String, dynamic>> response =
-          await _dio.post(_pathSignUp, data: jsonEncode(request));
+      final Response<Map<String, dynamic>> response = await _dio.post(_pathSignUp, data: jsonEncode(request));
 
       return AuthResponseModel.fromJson(response.data);
     } on DioError catch (e) {

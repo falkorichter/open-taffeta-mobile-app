@@ -11,19 +11,22 @@ If you're interested in an overview of the project (mostly focused on the Rust b
 ## Config
 You must create your configuration `config.json` from the config template `config.json.dist` (the new file should reside in the same directory). Customize the values as needed.
 
+## Building
+
+You can use the included flutter wrapper to get a tested version of flutter. It is cloned into the `.flutter` folder.
+
+```shell script
+./flutterw build apk --debug
+```
+running the command once, will setup the flutter instance in the local folder.
+
 ## Tips
 
 ### Code generation
 Ref :
 - JSON [documentation](https://flutter.io/json/)
 
-Generate : `flutter packages pub run build_runner build` | `flutter packages pub run build_runner watch`
-
-## TODO
-
-- Implement ClientID
-- [Change package name](https://stackoverflow.com/questions/51534616/how-to-change-package-name-in-flutter)
-- Add screenshots! Everybody love screenshots!
+Generate : `./flutterw packages pub run build_runner build` | `./flutterw packages pub run build_runner watch`
 
 ## Credits
 

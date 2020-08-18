@@ -12,8 +12,7 @@ class TokenInterceptor {
 
   TokenInterceptor({String accessToken}) {
     _accessToken = accessToken;
-    _interceptorWrapper =
-        InterceptorsWrapper(onRequest: _onRequest, onResponse: _onResponse);
+    _interceptorWrapper = InterceptorsWrapper(onRequest: _onRequest, onResponse: _onResponse);
   }
 
   RequestOptions _onRequest(RequestOptions options) {
@@ -59,17 +58,12 @@ dynamic apiErrorCatcher(dynamic err) {
   if (err is DioError && err.response != null) {
     final Response response = err.response;
 
-    checkApiResponse(response, stackTrace: err.stackTrace);
+    checkApiResponse(response, stackTrace: StackTrace.current);
 
     final statusCode = err?.response?.statusCode;
     final statusMessage = err?.response?.statusMessage;
-    final stackTrace = err?.stackTrace;
     if (statusCode != null) {
-      throw domain.HttpException(
-        statusCode: statusCode,
-        statusMessage: statusMessage,
-        stackTrace: stackTrace ?? StackTrace.current,
-      );
+      throw domain.HttpException(statusCode: statusCode, statusMessage: statusMessage);
     }
   }
   return err;
