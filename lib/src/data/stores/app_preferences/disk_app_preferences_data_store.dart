@@ -1,13 +1,13 @@
+import 'package:flutter_door_buzzer/src/data/InMemoryStorage.dart';
 import 'package:flutter_door_buzzer/src/data/stores/app_preferences/app_preferences_data_store.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 /// Local implementation of [AppPreferencesDataStore]
 class DiskAppPreferencesDataStore implements AppPreferencesDataStore {
   final String _keyAppDarkMode = 'APP_DARK_MODE';
 
-  final FlutterSecureStorage storage;
+  final InMemoryStorage storage;
 
-  DiskAppPreferencesDataStore() : storage = FlutterSecureStorage();
+  DiskAppPreferencesDataStore() : storage = InMemoryStorage();
 
   /// --------------------------------------------------------------------------
   ///                                Dark Mode

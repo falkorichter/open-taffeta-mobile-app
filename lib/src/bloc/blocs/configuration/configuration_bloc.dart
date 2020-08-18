@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_door_buzzer/data.dart';
 import 'package:flutter_door_buzzer/domain.dart';
 
@@ -36,8 +37,7 @@ class ConfigurationBloc extends Bloc<ConfigurationEvent, ConfigurationState> {
 
       // Disk Data Store (need access info for managers)
 
-      final DiskAuthInfoDataStore diskAuthInfoDataStore =
-          DiskAuthInfoDataStore();
+      final DiskAuthInfoDataStore diskAuthInfoDataStore = DiskAuthInfoDataStore();
       final DiskConfigDataStore diskConfigDataStore = DiskConfigDataStore();
 
       // Managers
@@ -53,14 +53,11 @@ class ConfigurationBloc extends Bloc<ConfigurationEvent, ConfigurationState> {
 
       // Data Store Factory
 
-      final ConfigDataStoreFactory configDataStoreFactory =
-          ConfigDataStoreFactory(diskDataStore: diskConfigDataStore);
+      final ConfigDataStoreFactory configDataStoreFactory = ConfigDataStoreFactory(diskDataStore: diskConfigDataStore);
 
-      final AppPreferencesDataStoreFactory appPreferencesDataStoreFactory =
-          AppPreferencesDataStoreFactory();
+      final AppPreferencesDataStoreFactory appPreferencesDataStoreFactory = AppPreferencesDataStoreFactory();
 
-      final BuzzerDataStoreFactory buzzerDataStoreFactory =
-          BuzzerDataStoreFactory(apiManager: buzzerApiManager);
+      final BuzzerDataStoreFactory buzzerDataStoreFactory = BuzzerDataStoreFactory(apiManager: buzzerApiManager);
 
       final AuthInfoDataStoreFactory authInfoDataStoreFactory =
           AuthInfoDataStoreFactory(diskDataStore: diskAuthInfoDataStore);
@@ -92,7 +89,8 @@ class ConfigurationBloc extends Bloc<ConfigurationEvent, ConfigurationState> {
         appPrefsRepo: _appPreferencesRepo,
       );
     } catch (error) {
-      print('$_tag:_mapAppLaunchedEventToState -> ${error.runtimeType}');
+      print('$_tag:_mapAppLaunchedEventToState -> ${error.runtimeType} ${StackTrace.current}');
+      FlutterError.dumpErrorToConsole(error);
       yield ConfigFailure(error: error);
     }
   }

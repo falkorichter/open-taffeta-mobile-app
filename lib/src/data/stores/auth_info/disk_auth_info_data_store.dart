@@ -1,18 +1,18 @@
 import 'package:flutter_door_buzzer/src/data/stores/auth_info/auth_info_data_store.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+import '../../InMemoryStorage.dart';
 
 class DiskAuthInfoDataStore implements AuthInfoDataStore {
   final String _keyOAuthAccessToken = 'OAUTH_ACCESS_TOKEN';
   final String _keyOAuthAccessTokenExpiration = 'OAUTH_ACCESS_TOKEN_EXPIRATION';
   final String _keyOAuthRefreshToken = 'OAUTH_REFRESH_TOKEN';
-  final String _keyOAuthRefreshTokenExpiration =
-      'OAUTH_REFRESH_TOKEN_EXPIRATION';
+  final String _keyOAuthRefreshTokenExpiration = 'OAUTH_REFRESH_TOKEN_EXPIRATION';
   final String _keyAuthUserId = 'AUTH_USER_ID';
 
-  FlutterSecureStorage storage;
+  InMemoryStorage storage;
 
   DiskAuthInfoDataStore() {
-    storage = FlutterSecureStorage();
+    storage = InMemoryStorage();
   }
 
   /// --------------------------------------------------------------------------
@@ -39,8 +39,7 @@ class DiskAuthInfoDataStore implements AuthInfoDataStore {
 
   @override
   Future<int> getAccessTokenExpiration() async {
-    return int.parse(await storage.read(key: _keyOAuthAccessTokenExpiration)) ??
-        0;
+    return int.parse(await storage.read(key: _keyOAuthAccessTokenExpiration)) ?? 0;
   }
 
   @override

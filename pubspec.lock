@@ -200,9 +200,11 @@ packages:
   fluro:
     dependency: "direct main"
     description:
-      name: fluro
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "30ae4378df7e39ed5f3128473fa3c59ee1b064b5"
+      url: "git://github.com/theyakka/fluro.git"
+    source: git
     version: "1.6.3"
   flutter:
     dependency: "direct main"
@@ -228,13 +230,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_secure_storage:
-    dependency: "direct main"
-    description:
-      name: flutter_secure_storage
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.3.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter

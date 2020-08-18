@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_door_buzzer/presentation.dart';
 
 class Routes {
-  final Router router = Router();
+  final FluroRouter router = FluroRouter();
 
   /// Small hax : https://github.com/flutter/flutter/issues/31006
   final AuthPage authPage = AuthPage();
