@@ -89,6 +89,7 @@ class _RegisterWidget extends State<RegisterWidget> {
                     child: TextFormField(
                       controller: signupEmailController,
                       keyboardType: TextInputType.emailAddress,
+                      autofillHints: const [AutofillHints.newUsername],
                       decoration: InputDecoration(
                         hintText: BuzzerLocalizations.of(context).formEmailHint,
                         labelText:
@@ -101,6 +102,7 @@ class _RegisterWidget extends State<RegisterWidget> {
                     child: TextFormField(
                       controller: signupPasswordController,
                       obscureText: _obscureTextSignup,
+                      autofillHints: const [AutofillHints.newPassword],
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           icon: Icon(_obscureTextSignup
@@ -118,6 +120,7 @@ class _RegisterWidget extends State<RegisterWidget> {
                     child: TextFormField(
                       controller: signupConfirmPasswordController,
                       obscureText: _obscureTextSignupConfirm,
+                      autofillHints: const [AutofillHints.newPassword],
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           icon: Icon(_obscureTextSignupConfirm

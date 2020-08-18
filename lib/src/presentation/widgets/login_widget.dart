@@ -77,6 +77,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       controller: loginEmailController,
+                      autofillHints: const [AutofillHints.email],
                       decoration: InputDecoration(
                         hintText: BuzzerLocalizations.of(context).formEmailHint,
                         labelText:
@@ -89,6 +90,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     child: TextFormField(
                       controller: loginPasswordController,
                       obscureText: _obscureTextLogin,
+                      autofillHints: const [AutofillHints.password],
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           icon: Icon(_obscureTextLogin
