@@ -9,10 +9,10 @@ class DiskAuthInfoDataStore implements AuthInfoDataStore {
   final String _keyOAuthRefreshTokenExpiration = 'OAUTH_REFRESH_TOKEN_EXPIRATION';
   final String _keyAuthUserId = 'AUTH_USER_ID';
 
-  InMemoryStorage storage;
+  PlatformIndependentStorage storage;
 
   DiskAuthInfoDataStore() {
-    storage = InMemoryStorage();
+    storage = PlatformIndependentStorage.getPlatformStorage();
   }
 
   /// --------------------------------------------------------------------------

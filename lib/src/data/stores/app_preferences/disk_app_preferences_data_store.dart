@@ -5,9 +5,9 @@ import 'package:flutter_door_buzzer/src/data/stores/app_preferences/app_preferen
 class DiskAppPreferencesDataStore implements AppPreferencesDataStore {
   final String _keyAppDarkMode = 'APP_DARK_MODE';
 
-  final InMemoryStorage storage;
+  final PlatformIndependentStorage storage;
 
-  DiskAppPreferencesDataStore() : storage = InMemoryStorage();
+  DiskAppPreferencesDataStore() : storage = PlatformIndependentStorage.getPlatformStorage();
 
   /// --------------------------------------------------------------------------
   ///                                Dark Mode

@@ -37,11 +37,16 @@ dependencies:
 
   # Routing
   fluro:
-    git: git://github.com/theyakka/fluro.git
+    git:
+      url: git@github.com:falkorichter/fluro.git
+      ref: fix/unambiguous_class_name
 
   # Streams/Async/Bloc
   rxdart: ^0.22.0
   flutter_bloc:  ^0.19.1
+
+  # Local Storage
+  flutter_secure_storage: ^3.3.3
 
   # Icon packages
   flutter_launcher_icons: ^0.7.0
