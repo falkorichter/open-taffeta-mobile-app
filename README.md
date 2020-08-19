@@ -1,16 +1,20 @@
 # web_app
 
-A new Flutter project.
+Started based on the sources of the [apiraino/open-taffeta-mobile-app](https://github.com/apiraino/open-taffeta-mobile-app) in an attempt to get OSX support running 
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Use the flutter wrapper:
 
-A few resources to get you started if this is your first Flutter project:
+```
+./flutterw run -d macos
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Screenshots:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![](docs/screenshots/Screenshot%202020-08-19%20at%2009.52.41_osx1.png)
+![](docs/screenshots/Screenshot%202020-08-19%20at%2009.52.45_osx2.png)
+
+## Known issues:
+
+* flutter_secure_storage is not working on OSX, we store everything in memory
