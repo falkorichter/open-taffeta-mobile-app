@@ -7,14 +7,23 @@ jobs:
     container:
       image: cirrusci/flutter:1.17.5
     steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      
+      - shell: bash
+        env:
+          SECRETS_JSON_FILE: ${{ secrets.SECRETS_JSON_FILE }}
+        run: |
+          echo "$SECRETS_JSON_FILE" > secrets.json
+
       - name: fix ownership
         run: sudo chown -R cirrus:cirrus .
+
       - name: get dependencies
         run: flutter pub get
+
       - name: debug build
         run: flutter build apk --debug
+
       - uses: actions/upload-artifact@v2
         with:
           name: upload the debug-apk
