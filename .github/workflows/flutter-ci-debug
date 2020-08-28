@@ -1,12 +1,6 @@
-name: Flutter CI Debug
-
-# This workflow is triggered on pushes to the repository.
-
+name: build-with-ubuntu-latest-no-docker
 on:
   push
-    
-# on: push    # Default will running for every branch.
-    
 jobs:
   build-with-ubuntu-latest:
     # This job will run on ubuntu virtual machine
