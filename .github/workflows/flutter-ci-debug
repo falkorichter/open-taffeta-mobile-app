@@ -3,9 +3,7 @@ name: Flutter CI Debug
 # This workflow is triggered on pushes to the repository.
 
 on:
-  push:
-    branches:
-    - master
+  push
     
 # on: push    # Default will running for every branch.
     
