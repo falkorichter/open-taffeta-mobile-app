@@ -7,8 +7,8 @@ jobs:
     container:
       image: cirrusci/flutter:1.17.5
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
       - name: fix ownership
         run: sudo chown -R cirrus:cirrus .
       - name: get dependencies
