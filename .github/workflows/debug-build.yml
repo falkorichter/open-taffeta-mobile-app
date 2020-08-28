@@ -1,8 +1,8 @@
-name: debug build
+name: debug-build-cirrusci-image
 on: [push]
 jobs:
   build:
-    name: debug-build
+    name: debug-build-cirrusci-image
     runs-on: ubuntu-latest
     container:
       image: cirrusci/flutter:1.17.5
