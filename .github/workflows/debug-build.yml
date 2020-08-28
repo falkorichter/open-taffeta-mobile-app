@@ -1,0 +1,18 @@
+jobs:
+  build:
+    name: debug-build
+    runs-on: cirrusci/flutter:1.17.5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: fix ownership
+        run: sudo chown -R cirrus:cirrus .
+      - name: get dependencies
+        run: flutter pub get
+      - name: debug build
+        run: flutter build apk --debug
+      - uses: actions/upload-artifact@v2
+        with:
+          name: upload the debug-apk
+          path: path/to/artifact/world.txt
+        
