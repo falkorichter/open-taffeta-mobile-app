@@ -20,6 +20,10 @@ You can use the included flutter wrapper to get a tested version of flutter. It 
 ```
 running the command once, will setup the flutter instance in the local folder.
 
+## CI
+
+We are trying to use github actions, but it´s not that easy.
+
 ## Tips
 
 ### Code generation
