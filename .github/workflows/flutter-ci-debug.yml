@@ -16,7 +16,7 @@ jobs:
     # Setup the flutter environment.
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.15.5'
+        flutter-version: '1.17.5'
     
     # Get flutter dependencies.
     - run: flutter pub get
