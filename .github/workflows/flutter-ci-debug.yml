@@ -13,8 +13,8 @@ jobs:
       env:
         SECRETS_JSON_FILE: ${{ secrets.SECRETS_JSON_FILE }}
         run: |
-      echo "$SECRETS_JSON_FILE" > secrets.json
-      
+          echo "$SECRETS_JSON_FILE" > secrets.json
+
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
