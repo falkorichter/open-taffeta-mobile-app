@@ -25,6 +25,12 @@ def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+} else {
+    print "# # # # # # WARNING A RELEASE BUILD IS NOT POSSIBLE BECAUSE `key.properties` ARE MISSING # # # # # #"
+    keystoreProperties['keyAlias'] = "empty"
+    keystoreProperties['keyPassword'] = "empty"
+    keystoreProperties['storeFile'] = "nothing"
+    keystoreProperties['storePassword'] = "empty"
 }
 
 apply plugin: 'com.android.application'
