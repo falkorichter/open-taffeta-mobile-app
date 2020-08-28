@@ -8,7 +8,7 @@ on:
 # on: push    # Default will running for every branch.
     
 jobs:
-  build:
+  build-with-ubuntu-latest:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
